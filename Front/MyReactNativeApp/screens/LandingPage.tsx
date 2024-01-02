@@ -1,15 +1,14 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
+import styles from '../styles/LandingPageStyles'; // Importing styles
 
-// Define the stack navigator's screen params list if you haven't done so already
 export type RootStackParamList = {
-  Login: undefined; // Assuming 'Login' is the name of your screen for login
-  Register: undefined; // Assuming 'Register' is the name of your screen for registration
+  Login: undefined;
+  Register: undefined;
   // ... other screens and their parameters
 };
 
-// Type the navigation hook with the appropriate navigation prop based on your stack
 const LandingPage = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
@@ -21,17 +20,5 @@ const LandingPage = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-});
 
 export default LandingPage;
